@@ -12,7 +12,7 @@ pagerSize = 20
 style = "github-dark"
 
 [params]
-  author = "Arash Ghafari"
+  author = "Arash Ghaffari"
   info = "Network & System Programmer"
   description = "BrainDump"
   keywords = "blog,developer,programmer,personal"
