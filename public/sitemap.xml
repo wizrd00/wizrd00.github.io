@@ -8,7 +8,11 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2026-08-17T06:47:43-04:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/authors/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

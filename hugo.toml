@@ -1,8 +1,9 @@
-baseurl = "https://wizrd00.github.io"
-title = "Wizrd's Blog"
+baseurl = "http://wizrd00.github.io"
+title = "Arash"
 theme = "coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
+
 
 [pagination]
 pagerSize = 20
@@ -11,28 +12,57 @@ pagerSize = 20
 style = "github-dark"
 
 [params]
-author = "Arash Ghafari"
-info = "Systems Programmer"
-description = "notes on systems programming, kernels, and hardware"
-since = 2026
-colorScheme = "auto"
+  author = "Arash Ghafari"
+  info = "Full Stack DevOps and Magician"
+  description = "John Doe's personal website"
+  keywords = "blog,developer,personal"
+  avatarurl = "images/avatar.jpg"
+  #gravatar = "john.doe@example.com"
+
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2019
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
 
 [taxonomies]
-category = "categories"
-tag = "tags"
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
 
+# Social links
 [[params.social]]
-name = "Github"
-icon = "fa-brands fa-github fa-2x"
-weight = 1
-url = "https://github.com/wizrd00/"
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/johndoe/"
+[[params.social]]
+  name = "Gitlab"
+  icon = "fa-brands fa-gitlab fa-2x"
+  weight = 2
+  url = "https://gitlab.com/johndoe/"
+[[params.social]]
+  name = "Twitter"
+  icon = "fa-brands fa-x-twitter fa-2x"
+  weight = 3
+  url = "https://twitter.com/johndoe/"
 
+# Menu links
 [[menu.main]]
-name = "Blog"
-weight = 1
-url = "posts/"
-
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
 [[menu.main]]
-name = "About"
-weight = 2
-url = "about/"
+  name = "About"
+  weight = 2
+  url = "about/"

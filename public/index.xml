@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Arash</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on Arash</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 17 Aug 2026 06:47:43 -0400</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/about/</link>
+				<pubDate>Mon, 17 Aug 2026 06:47:43 -0400</pubDate>
+				<guid>http://localhost:1313/about/</guid>
+				<description>&lt;h1 id=&#34;hi&#34;&gt;&#xA;  Hi &lt;img src=&#34;https://wizrd00.github.io/assets/picture/wizard_icon.png&#34; alt=&#34;&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hi&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I&amp;rsquo;m Arash Ghaffari and I live in &lt;em&gt;Tehran&lt;/em&gt;.&#xA;I&amp;rsquo;m a &lt;strong&gt;C99&lt;/strong&gt; expert and &lt;strong&gt;Network/System Programmer&lt;/strong&gt;.&#xA;My OS is &lt;a href=&#34;https://voidlinux.org&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Voidlinux (musl-based)&lt;/em&gt;&lt;/a&gt;.&#xA;My editor is &lt;em&gt;Vim&lt;/em&gt;.&#xA;My &lt;strong&gt;C&lt;/strong&gt; Compiler is &lt;a href=&#34;https://en.wikipedia.org/wiki/Portable_C_Compiler&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;pcc&lt;/em&gt;&lt;/a&gt;(I don&amp;rsquo;t like &lt;em&gt;gcc&lt;/em&gt; for two reason, first it is in contrast with &lt;em&gt;minimalism&lt;/em&gt; and two it is written in C++).&#xA;I hate &lt;em&gt;C++&lt;/em&gt;.&#xA;And I think &lt;strong&gt;C99&lt;/strong&gt; is most brilliant and minimalist language ever made and the human kind is lucky the C exists.&#xA;I also enjoy &lt;em&gt;Python&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
