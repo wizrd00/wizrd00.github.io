@@ -1,3 +1,28 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseurl = "https://wizrd00.github.io"
+title = "Wizrd's Blog"
+theme = "coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+[pagination]
+pagerSize = 20
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+author = "Arash Ghafari"
+info = "Systems Programmer"
+description = "notes on systems programming, kernels, and hardware"
+since = 2026
+colorScheme = "auto"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[[params.social]]
+name = "Github"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/wizrd00/"
