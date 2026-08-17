@@ -1,7 +1,7 @@
 +++
 title = 'About'
 date = 2026-08-17T06:47:43-04:00
-draft = true
+draft = false
 +++
 # Hi ![](https://wizrd00.github.io/assets/picture/wizard_icon.png)
 > I'm Arash Ghaffari and I live in *Tehran*.
