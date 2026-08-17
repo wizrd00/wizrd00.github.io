@@ -1,6 +1,6 @@
 +++ 
 draft = false
-date = 2026-08-17T09:11:32-04:00
+date = 2025-10-31
 title = "Terrenity"
 description = "Professional Terminal Graphics Engine based on termios(UNIX API)"
 slug = "terrenity"

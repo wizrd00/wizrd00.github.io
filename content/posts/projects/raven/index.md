@@ -1,6 +1,6 @@
 +++ 
 draft = false
-date = 2026-08-17T09:04:22-04:00
+date = 2026-05-30
 title = "Raven"
 description = "My Research Around Building a QuadCoopter"
 slug = "raven"

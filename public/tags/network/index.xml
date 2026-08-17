@@ -10,13 +10,20 @@
 		
 		
 		
-			<lastBuildDate>Mon, 17 Aug 2026 08:55:21 -0400</lastBuildDate>
+			<lastBuildDate>Mon, 17 Aug 2026 10:13:24 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>HI6ToolKit</title>
+				<link>http://localhost:1313/posts/projects/hi6toolkit/</link>
+				<pubDate>Mon, 17 Aug 2026 10:13:24 -0400</pubDate>
+				<guid>http://localhost:1313/posts/projects/hi6toolkit/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>NodeProbe</title>
 				<link>http://localhost:1313/posts/projects/nodeprobe/</link>
-				<pubDate>Mon, 17 Aug 2026 08:55:21 -0400</pubDate>
+				<pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/projects/nodeprobe/</guid>
 				<description>&lt;h1 id=&#34;nodeprobe-project&#34;&gt;&#xA;  &lt;a href=&#34;https://github.com/wizrd00/NodeProbe&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NodeProbe&lt;/a&gt; Project &lt;img src=&#34;./nodeprobe_icon.png&#34; alt=&#34;&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#nodeprobe-project&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;NodeProbe is a multi-threaded network prober and host discovery which uses various &lt;em&gt;Network Protocols&lt;/em&gt; to reconnaissance and gathering information about hosts in &lt;em&gt;Local Networks&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;logs&#34;&gt;&#xA;  Logs&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#logs&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;h4 id=&#34;steps&#34;&gt;&#xA;  Steps&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#steps&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;p&gt;Steps to writing this program dispite of details :&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First step :&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;using ARP Req to discovery hosts and specifiy that an IP is alive or not.&#xA;To receive and send ARP, I need to create &lt;em&gt;dgram socket&lt;/em&gt; with address family &lt;em&gt;AF_PACKET&lt;/em&gt; but in protocol argument I have two options. First, set the protocol arg of &lt;code&gt;socket()&lt;/code&gt; to &lt;code&gt;htons(ETH_P_ARP)&lt;/code&gt; and start receiving and sending on socket. Second, set the protocol arg to zero and set the &lt;code&gt;sll_protocol&lt;/code&gt; member of &lt;code&gt;struct sockaddr_ll&lt;/code&gt; to &lt;code&gt;htons(ETH_P_ARP)&lt;/code&gt;.&lt;/p&gt;</description>
 			</item>

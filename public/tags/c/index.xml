@@ -10,36 +10,43 @@
 		
 		
 		
-			<lastBuildDate>Mon, 17 Aug 2026 09:30:47 -0400</lastBuildDate>
+			<lastBuildDate>Sat, 01 Aug 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/c/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Venux Kernel</title>
 				<link>http://localhost:1313/posts/projects/venux/</link>
-				<pubDate>Mon, 17 Aug 2026 09:30:47 -0400</pubDate>
+				<pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/projects/venux/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>Terrenity</title>
-				<link>http://localhost:1313/posts/projects/terrenity/</link>
-				<pubDate>Mon, 17 Aug 2026 09:11:32 -0400</pubDate>
-				<guid>http://localhost:1313/posts/projects/terrenity/</guid>
-				<description>&lt;h1 id=&#34;terrenity-project&#34;&gt;&#xA;  &lt;a href=&#34;https://github.com/wizrd00/terrenity&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Terrenity&lt;/a&gt; Project &lt;img src=&#34;./terrenity_icon.png&#34; alt=&#34;&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#terrenity-project&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The terrenity work is combination of three word &lt;em&gt;terminal&lt;/em&gt;, &lt;em&gt;render&lt;/em&gt; and &lt;em&gt;simplicity&lt;/em&gt;.&#xA;I wrote this library because I had an idea :&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;What if we consider each terminal character cell as a pixel?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;If we consider each terminal character cell as pixel, we have a matrix-display instead of terminal which with specific command we can clear the screen, change color of a pixel and other adjustments exactly like a real display like ssd1306 display module.&lt;/p&gt;</description>
-			</item>
-			<item>
 				<title>Raven</title>
 				<link>http://localhost:1313/posts/projects/raven/</link>
-				<pubDate>Mon, 17 Aug 2026 09:04:22 -0400</pubDate>
+				<pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/projects/raven/</guid>
 				<description>&lt;h1 id=&#34;raven-project-raven-icon&#34;&gt;&#xA;  &lt;a href=&#34;https://github.com/wizrd00/raven&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Raven&lt;/a&gt; Project &lt;img src=&#34;./raven_icon.png&#34; alt=&#34;raven-icon&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#raven-project-raven-icon&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;This project is a quadcopter called raven. actually this project hasn&amp;rsquo;t done yet though.&#xA;I&amp;rsquo;ve started it few weeks ago and I stoped that becasuse of my final tests at &lt;a href=&#34;https://en.wikipedia.org/wiki/Imam_Khomeini_International_University&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IKIU&lt;/a&gt;.&#xA;Let me start from the begining.&#xA;I&amp;rsquo;ve got an idea to make a quadcopter with dc motor driver(I&amp;rsquo;d already done enough projects with &lt;a href=&#34;https://en.wikipedia.org/wiki/ESP8266&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ESP8266&lt;/a&gt; NodeMCU module) so I searched around dc driver motors,&#xA;there was &lt;strong&gt;L298&lt;/strong&gt; driver (which it wasn&amp;rsquo;t appropriate for a quadcopter because it&amp;rsquo;s old, large and it uses old non-smd &lt;em&gt;MOSFET&lt;/em&gt; which makes it hot after a while), &lt;strong&gt;L9110S&lt;/strong&gt; driver(which I bought at first time), &lt;strong&gt;TB6612FNG&lt;/strong&gt; driver(too expensive) etc.&#xA;I didn&amp;rsquo;t have any exprience about coreless motors and how much &lt;em&gt;current&lt;/em&gt; they need so I bought two L9110S.&lt;/p&gt;</description>
 			</item>
 			<item>
+				<title>Brikcrash</title>
+				<link>http://localhost:1313/posts/projects/brikcrash/</link>
+				<pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/projects/brikcrash/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>NodeProbe</title>
 				<link>http://localhost:1313/posts/projects/nodeprobe/</link>
-				<pubDate>Mon, 17 Aug 2026 08:55:21 -0400</pubDate>
+				<pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/projects/nodeprobe/</guid>
 				<description>&lt;h1 id=&#34;nodeprobe-project&#34;&gt;&#xA;  &lt;a href=&#34;https://github.com/wizrd00/NodeProbe&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NodeProbe&lt;/a&gt; Project &lt;img src=&#34;./nodeprobe_icon.png&#34; alt=&#34;&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#nodeprobe-project&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;NodeProbe is a multi-threaded network prober and host discovery which uses various &lt;em&gt;Network Protocols&lt;/em&gt; to reconnaissance and gathering information about hosts in &lt;em&gt;Local Networks&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;logs&#34;&gt;&#xA;  Logs&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#logs&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;h4 id=&#34;steps&#34;&gt;&#xA;  Steps&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#steps&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;p&gt;Steps to writing this program dispite of details :&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First step :&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;using ARP Req to discovery hosts and specifiy that an IP is alive or not.&#xA;To receive and send ARP, I need to create &lt;em&gt;dgram socket&lt;/em&gt; with address family &lt;em&gt;AF_PACKET&lt;/em&gt; but in protocol argument I have two options. First, set the protocol arg of &lt;code&gt;socket()&lt;/code&gt; to &lt;code&gt;htons(ETH_P_ARP)&lt;/code&gt; and start receiving and sending on socket. Second, set the protocol arg to zero and set the &lt;code&gt;sll_protocol&lt;/code&gt; member of &lt;code&gt;struct sockaddr_ll&lt;/code&gt; to &lt;code&gt;htons(ETH_P_ARP)&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Terrenity</title>
+				<link>http://localhost:1313/posts/projects/terrenity/</link>
+				<pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/projects/terrenity/</guid>
+				<description>&lt;h1 id=&#34;terrenity-project&#34;&gt;&#xA;  &lt;a href=&#34;https://github.com/wizrd00/terrenity&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Terrenity&lt;/a&gt; Project &lt;img src=&#34;./terrenity_icon.png&#34; alt=&#34;&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#terrenity-project&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The terrenity work is combination of three word &lt;em&gt;terminal&lt;/em&gt;, &lt;em&gt;render&lt;/em&gt; and &lt;em&gt;simplicity&lt;/em&gt;.&#xA;I wrote this library because I had an idea :&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;What if we consider each terminal character cell as a pixel?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;If we consider each terminal character cell as pixel, we have a matrix-display instead of terminal which with specific command we can clear the screen, change color of a pixel and other adjustments exactly like a real display like ssd1306 display module.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>
