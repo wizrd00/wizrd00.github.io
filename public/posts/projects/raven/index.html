@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Raven · Arash
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Arash Ghafari">
+<meta name="description" content="My Research Around Building a QuadCoopter">
+<meta name="keywords" content="blog,developer,programmer,personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Raven">
+	<meta name="twitter:description" content="My Research Around Building a QuadCoopter">
+
+<meta property="og:url" content="http://localhost:1313/posts/projects/raven/">
+	<meta property="og:site_name" content="Arash">
+	<meta property="og:title" content="Raven">
+	<meta property="og:description" content="My Research Around Building a QuadCoopter">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-08-17T09:04:22-04:00">
+		<meta property="article:modified_time" content="2026-08-17T09:04:22-04:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/projects/raven/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Arash
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/projects/raven/">
+              Raven
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-08-17T09:04:22-04:00">
+                August 17, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h1 id="raven-project-raven-icon">
+  <a href="https://github.com/wizrd00/raven"  class="external-link" target="_blank" rel="noopener">Raven</a> Project <img src="./raven_icon.png" alt="raven-icon">
+  <a class="heading-link" href="#raven-project-raven-icon">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>This project is a quadcopter called raven. actually this project hasn&rsquo;t done yet though.
+I&rsquo;ve started it few weeks ago and I stoped that becasuse of my final tests at <a href="https://en.wikipedia.org/wiki/Imam_Khomeini_International_University"  class="external-link" target="_blank" rel="noopener">IKIU</a>.
+Let me start from the begining.
+I&rsquo;ve got an idea to make a quadcopter with dc motor driver(I&rsquo;d already done enough projects with <a href="https://en.wikipedia.org/wiki/ESP8266"  class="external-link" target="_blank" rel="noopener">ESP8266</a> NodeMCU module) so I searched around dc driver motors,
+there was <strong>L298</strong> driver (which it wasn&rsquo;t appropriate for a quadcopter because it&rsquo;s old, large and it uses old non-smd <em>MOSFET</em> which makes it hot after a while), <strong>L9110S</strong> driver(which I bought at first time), <strong>TB6612FNG</strong> driver(too expensive) etc.
+I didn&rsquo;t have any exprience about coreless motors and how much <em>current</em> they need so I bought two L9110S.</p>
+<p><img src="./l9110s_photo.jpg" alt="l9110s"></p>
+<p>The L9110S driver is a two-channel, H-bridge DC motor driver and each channel maximum current is <strong>800mA</strong>! and I&rsquo;ve said before, I didn&rsquo;t know a coreless motor in it&rsquo;s maximum speed with a reasonable <em>propeller</em> may needs 1.8A so L9110S was a bad mistake.
+Altought I knew it&rsquo;s not gonna work but I assembled it just for fun to see what happen and the result was this</p>
+<p><img src="./quadcopter_photo.jpg" alt="first-quadcopter"></p>
+<p>This quadcopter(it&rsquo;s not even close to be a quadcopter) had several issues :</p>
+<ul>
+<li>it was too heavy, two L9110S driver with a NodeMCU module and the battery(a <em>Pod Vape</em> Li-ion 600mA 8A battery) which was heaviest item.</li>
+<li>fake battery, a quadcopter needs <em>Li-pol</em> battery which is light and also it needs a battery with high discharge coefficient.</li>
+<li>inappropriate motor driver</li>
+<li>bad wiring, the picture above clearly shows that the wiring is a mess.</li>
+<li>weak motors, I&rsquo;ve got four 720 coreless motors which was obviously too weak but I hadn&rsquo;t realize that.</li>
+</ul>
+<p>So I&rsquo;ve researched to find a better motor driver and after lots of searching and scrolling I found <em>DRV8833</em> motor driver, it gave me a lot of hope.</p>
+<p><img src="./drv8833_photo.jpg" alt="drv8833"></p>
+<p>The DRV8833 driver basically works like L9110S(much smaller than L9110S and also with <em>AT8833</em> IC) but with a important difference, the DRV8833 provides 2A peak per channel and provides 1.2A continuously per channel.
+Therefore, I bought two of them.</p>
+<p>To solve the battery issue I bought a Li-pol 600mA 25C quadcopter battery which it was so light.</p>
+<p>I wasn&rsquo;t going to believe the fact that my coreless motors are weak and it should be the first thing to replace and I assembled the quadcopter again and this time motors were working at highest speed(because I&rsquo;d set PWM <em>duty cycle</em> to 100%) but still the quadcopter couldn&rsquo;t fly and after a while working in maximum speed, the flying wasn&rsquo;t the main problem the drivers were.
+Yes, the drivers were close be burnt and in that moment I realized an appropriate driver must provide at least 1A more than the current each motor needs to work in maximum speed.</p>
+<p>But this time there wasn&rsquo;t the driver I need so I had to make my own DC motor driver.
+I knew first thing that a motor driver needs is a <em>MOSFET</em> but I didn&rsquo;t know other stuff a driver needs.
+So I&rsquo;ve searched alot and I finally realized what a motor driver needs(in this case I didn&rsquo;t need H-brigde) :</p>
+<ul>
+<li>High current SMD MOSFET</li>
+<li>Pull down Resistor, to discharge the MOSFET gate.</li>
+<li>SMD Diode, as a flyback diode.</li>
+</ul>
+<p>So, I designed this scheme</p>
+<p><img src="./my_own_driver_scheme_photo.jpg" alt="driver-scheme"></p>
+<p>And after buying <em>AO3400</em> MOSFET SOT23 package, <em>M7</em> Diode and 10K Resistor I made four of this :</p>
+<p><img src="./my_own_driver_photo.jpg" alt="driver-circuit"></p>
+<p>The only problem right now is the motors and I&rsquo;m gonna buy 8520 Coreless after my final tests.</p>
+<p><img src="./coreless_motor_photo.jpg" alt="coreless"></p>
+<p>If the quadcopter flies, it gonna need Accelerometer/Gyroscope sensor like <em>MPU6050</em> or <em>MPU9250</em>.</p>
+<p><img src="./mpu9250_photo.jpg" alt="mpu9250"></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     Arash Ghafari 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

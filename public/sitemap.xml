@@ -2,11 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
-    <lastmod>2026-08-17T06:47:43-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-08-17T06:47:43-04:00</lastmod>
+    <lastmod>2026-08-17T09:11:32-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-08-17T09:11:32-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/projects/terrenity/</loc>
+    <lastmod>2026-08-17T09:11:32-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/projects/raven/</loc>
+    <lastmod>2026-08-17T09:04:22-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/projects/nodeprobe/</loc>
+    <lastmod>2026-08-17T08:55:21-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/cheatsheet/</loc>
+    <lastmod>2026-08-17T08:49:55-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2026-08-17T08:40:37-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/</loc>
   </url><url>

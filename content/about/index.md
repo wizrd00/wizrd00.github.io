@@ -1,10 +1,10 @@
 +++
 title = 'About'
-date = 2026-08-17T06:47:43-04:00
-draft = false
+date = 2026-08-17T08:40:37-04:00
+draft = true
 +++
-# Hi ![](https://wizrd00.github.io/assets/picture/wizard_icon.png)
-> I'm Arash Ghaffari and I live in *Tehran*.
+# Hi
+I'm Arash Ghaffari and I live in *Tehran*.
 I'm a **C99** expert and **Network/System Programmer**.
 My OS is [*Voidlinux (musl-based)*](https://voidlinux.org).
 My editor is *Vim*.
@@ -16,4 +16,4 @@ I also enjoy *Python*.
 My OS is **pure**, no additional software and just the default system apps so what happend when I need softwares that my system doesn't include? I have 64GB flash drive with Ventoy and several linux distros such as debian, tails, kali and another void linux.
 So the Kali(which is **full edition**) includes every software I need such as gcc, wireshark etc.
 
-> ![brikcrash](https://wizrd00.github.io/assets/picture/gameplay.gif)
+![brikcrash](./gameplay.gif)
