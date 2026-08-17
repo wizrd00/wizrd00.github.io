@@ -26,3 +26,13 @@ name = "Github"
 icon = "fa-brands fa-github fa-2x"
 weight = 1
 url = "https://github.com/wizrd00/"
+
+[[menu.main]]
+name = "Blog"
+weight = 1
+url = "posts/"
+
+[[menu.main]]
+name = "About"
+weight = 2
+url = "about/"
