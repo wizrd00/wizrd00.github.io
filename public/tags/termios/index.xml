@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Termios on Arash</title>
+		<link>http://localhost:1313/tags/termios/</link>
+		<description>Recent content in Termios on Arash</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 17 Aug 2026 09:11:32 -0400</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/termios/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Terrenity</title>
+				<link>http://localhost:1313/posts/projects/terrenity/</link>
+				<pubDate>Mon, 17 Aug 2026 09:11:32 -0400</pubDate>
+				<guid>http://localhost:1313/posts/projects/terrenity/</guid>
+				<description>&lt;h1 id=&#34;terrenity-project&#34;&gt;&#xA;  &lt;a href=&#34;https://github.com/wizrd00/terrenity&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Terrenity&lt;/a&gt; Project &lt;img src=&#34;./terrenity_icon.png&#34; alt=&#34;&#34;&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#terrenity-project&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The terrenity work is combination of three word &lt;em&gt;terminal&lt;/em&gt;, &lt;em&gt;render&lt;/em&gt; and &lt;em&gt;simplicity&lt;/em&gt;.&#xA;I wrote this library because I had an idea :&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;What if we consider each terminal character cell as a pixel?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;If we consider each terminal character cell as pixel, we have a matrix-display instead of terminal which with specific command we can clear the screen, change color of a pixel and other adjustments exactly like a real display like ssd1306 display module.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

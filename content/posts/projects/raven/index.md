@@ -1,13 +1,12 @@
 +++ 
-draft = true
+draft = false
 date = 2026-08-17T09:04:22-04:00
 title = "Raven"
 description = "My Research Around Building a QuadCoopter"
-authors = []
-tags = []
-categories = []
-externalLink = ""
-series = []
+slug = "raven"
+authors = ["Me"]
+tags = ["esp8266", "embedded", "pwm", "c", "c99"]
+categories = ["Projects"]
 +++
 # [Raven](https://github.com/wizrd00/raven) Project ![raven-icon](./raven_icon.png)
 This project is a quadcopter called raven. actually this project hasn't done yet though.
@@ -59,7 +58,7 @@ And after buying *AO3400* MOSFET SOT23 package, *M7* Diode and 10K Resistor I ma
 
 ![driver-circuit](./my_own_driver_photo.jpg)
 
-The only problem right now is the motors and I'm gonna buy 8520 Coreless after my final tests.
+The only problem right now is the motors and I'm gonna buy 8520 Coreless.
 
 ![coreless](./coreless_motor_photo.jpg)
 

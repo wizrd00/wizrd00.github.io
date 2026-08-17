@@ -1,17 +1,18 @@
 +++ 
-draft = true
+draft = false
 date = 2026-08-17T09:11:32-04:00
 title = "Terrenity"
 description = "Professional Terminal Graphics Engine based on termios(UNIX API)"
-authors = []
-tags = []
-categories = []
-externalLink = ""
-series = []
+slug = "terrenity"
+authors = ["Me"]
+tags = ["tui", "terminal", "termios", "c", "c99", "unix"]
+categories = ["Projects"]
 +++
 # [Terrenity](https://github.com/wizrd00/terrenity) Project ![](./terrenity_icon.png)
 The terrenity work is combination of three word *terminal*, *render* and *simplicity*.
-I wrote this library because I had an idea : *What if we consider each terminal character cell as a pixel?*.
+I wrote this library because I had an idea : 
+> *What if we consider each terminal character cell as a pixel?*
+
 If we consider each terminal character cell as pixel, we have a matrix-display instead of terminal which with specific command we can clear the screen, change color of a pixel and other adjustments exactly like a real display like ssd1306 display module.
 
 ### First Scheme
