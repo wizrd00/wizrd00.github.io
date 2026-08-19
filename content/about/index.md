@@ -12,4 +12,6 @@ And I think **C99** is most brilliant and minimalist language ever made and the 
 I also enjoy **Python**(only to write useful scripts).  
 My editor is **Vim**.  
 
+**I'm not a good English writer, but I am a good reader, so there will be lots of grammar mistakes in my posts.**  
+
 ![brikcrash](./gameplay.gif)
