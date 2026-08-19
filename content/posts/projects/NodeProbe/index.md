@@ -32,7 +32,7 @@ To receive and send ICMP, I need to create *dgram socket* with address family *A
  - checking UDP-based services such as *DNS*, *DHCP, *NTP* etc.
 
 #### How do I fake-test my modules?
-As you know, testing modules is an unavoidable part of programming and according to size of the project, there is two option in C :
+Testing modules is an unavoidable part of programming and according to size of the project, there is two option in C :
 
 - *assert.h* standard header and `assert()` macro; In small Projects it works fine but it has an annoying problem, it doesn't give u a location to where the problem occurs
 - third-party test libraries like [*Unity*](https://github.com/ThrowTheSwitch/Unity)
@@ -40,7 +40,7 @@ As you know, testing modules is an unavoidable part of programming and according
 I'm used to using *Unity* to test my modules. It's easy to link, It's minimal, It's fast(I think it probably tests units in saperate threads).
 But in Network Projects, testing units is not that easy. because there is *IO Band* functions such as `recv()`, `send()`, `recvfrom()`, etc. So units can't be dependent on these functions and to reach that goal you have to write fake version of them and link them to ur software(linkers use your functions instead of *libc* version of them by default so there is no need to manipulate linker).
 
-My method is to make a directory called *fake* inside of your test dir and use *sed* to replace your **`#include <sys/socket.h>`** to **`#include "fake_socket.h"`** or any header you want and save it in the *fake* dir. Also I write a *fake_socket.h* and *fake_socket.c* and use **`-Ifake`** make my compiler to use *fake_socket.h*.
+My method is to make a directory called *fake* inside of test dir and use *sed* to replace **`#include <sys/socket.h>`** to **`#include "fake_socket.h"`** or any header and save it in the *fake* dir. Also I write a *fake_socket.h* and *fake_socket.c* and use **`-Ifake`** make my compiler to use *fake_socket.h*.
 To making all I have said sense, here is and example of this method :
 
 ```sh
