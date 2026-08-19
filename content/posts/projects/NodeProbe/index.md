@@ -95,12 +95,12 @@ $(TEST_OBJ) : $(TEST_SRC)
 	$(CC) -c $(CFLAGS) -I$(FAKE_DIR) -I$(UNITY_DIR) -I$(INCLUDE_DIR) -o $@ $^
 $(ARPMAN_OBJ) : $(FAKE_ARPMAN_SRC) $(FAKE_ARPMAN_HDR)
 	@echo compiling $<
-**	$(CC) -c $(CFLAGS) -I$(FAKE_DIR) -I$(INCLUDE_DIR) -o $@ $<**
+	$(CC) -c $(CFLAGS) -I$(FAKE_DIR) -I$(INCLUDE_DIR) -o $@ $<
 $(FAKE_ARPMAN_SRC) : $(REAL_ARPMAN_SRC)
-**	@cp $< $@**
+	@cp $< $@
 $(FAKE_ARPMAN_HDR) : $(REAL_ARPMAN_HDR)
-**	@cp $< $@**
-**	@sed -e "s/include <poll\.h>/include <fake_poll.h>/" -e "s/include <sys\/socket\.h>/include <fake_socket\.h>/" $< > $@**
+	@cp $< $@
+	@sed -e "s/include <poll\.h>/include <fake_poll.h>/" -e "s/include <sys\/socket\.h>/include <fake_socket\.h>/" $< > $@
 $(FAKE_SOCKET_OBJ) : $(FAKE_SOCKET_SRC)
 	@echo compiling $<
 	$(CC) -c $(CFLAGS) -I$(FAKE_DIR) -I$(INCLUDE_DIR) -o $@ $<
