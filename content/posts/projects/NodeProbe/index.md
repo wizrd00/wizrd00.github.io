@@ -29,7 +29,7 @@ To receive and send ICMP, I need to create *dgram socket* with address family *A
  - checking TCP-based services such as *SSH*, *FTP*, *HTTP* etc.
 
 - Fourth step :
- - checking UDP-based services such as *DNS*, *DHCP, *NTP* etc.
+ - checking UDP-based services such as *DNS*, *DHCP*, *NTP* etc.
 
 #### How do I fake-test my modules?
 Testing modules is an unavoidable part of programming and according to size of the project, there is two option in C :
