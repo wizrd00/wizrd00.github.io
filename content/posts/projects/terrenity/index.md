@@ -9,7 +9,7 @@ tags = ["tui", "terminal", "termios", "c", "c99", "unix"]
 categories = ["Projects"]
 +++
 # [Terrenity](https://github.com/wizrd00/terrenity) Project ![](./terrenity_icon.png)
-The terrenity work is combination of three word *terminal*, *render* and *simplicity*.
+The terrenity work is a combination of three word *terminal*, *render* and *simplicity*.
 I wrote this library because I had an idea : 
 > *What if we consider each terminal character cell as a pixel?*
 
@@ -66,10 +66,10 @@ The result was this :
 ![message-box](./shadow_graphic_photo.jpg)
 
 ### New Ideas
-- [ ] Add `draw_circle()` function, the library already have functions to draw *rectangle* and *rhombus* but circle is the next step. My idea to draw a circle based on the circle equation which is x^2^ + y^2^ = R^2^.
+- [ ] Add `draw_circle()` function, the library already has functions to draw *rectangle* and *rhombus* but circle is the next step. My idea to draw a circle based on the circle equation which is x^2^ + y^2^ = R^2^.
 - [ ] Add `draw_message_box()` function.
 - [ ] Extend the terrenity to *3D Rendering*.
 
 ### Last Words
-Working on this library was one of my best times and its code is one of the cleanest and most carefully code I've ever written.
+Working on this library was one of my best times and its code is one of the cleanest and most carefully written code I've ever written.
 Also I have to complete its documentation which is exhausting :(
