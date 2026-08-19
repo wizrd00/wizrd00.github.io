@@ -2,7 +2,7 @@
 draft = false
 date = 2026-05-30
 title = "Raven"
-description = "My Research Around Building a QuadCoopter"
+description = "My Research Around Building a QuadCopter"
 slug = "raven"
 authors = ["Me"]
 tags = ["esp8266", "embedded", "pwm", "c", "c99"]
