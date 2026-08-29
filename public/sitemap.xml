@@ -3,46 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/projects/hi6toolkit/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/low-level/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/me/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/network/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/projects/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-08-17T10:13:24-04:00</lastmod>
+    <lastmod>2026-08-17T08:49:55-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/cheatsheet/</loc>
     <lastmod>2026-08-17T08:49:55-04:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-08-17T08:49:55-04:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-08-17T08:40:37-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2026-08-01T00:00:00+00:00</lastmod>
@@ -50,7 +23,19 @@
     <loc>http://localhost:1313/tags/c99/</loc>
     <lastmod>2026-08-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/kernel/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/me/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/projects/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/projects/venux/</loc>
@@ -92,6 +77,12 @@
     <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2026-01-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/low-level/</loc>
+    <lastmod>2026-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/network/</loc>
+    <lastmod>2026-01-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/projects/nodeprobe/</loc>
     <lastmod>2026-01-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -103,6 +94,15 @@
   </url><url>
     <loc>http://localhost:1313/tags/tui/</loc>
     <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/projects/hi6toolkit/</loc>
+    <lastmod>2023-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2023-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2023-09-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/series/</loc>
   </url>

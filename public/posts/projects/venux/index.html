@@ -12,7 +12,7 @@
 
 
 
-<meta name="author" content="Arash Ghafari">
+<meta name="author" content="Arash Ghaffari">
 <meta name="description" content="My Minimal Unix-Like Kernel">
 <meta name="keywords" content="blog,developer,programmer,personal">
 
@@ -161,7 +161,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              0-minute read
+              2-minute read
             </span>
           </div>
           <div class="authors">
@@ -194,7 +194,50 @@
 
       <div class="post-content">
         
-        
+        <h2 id="uefi-bootloader">
+  UEFI Bootloader
+  <a class="heading-link" href="#uefi-bootloader">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<hr>
+<h4 id="what-a-uefi-bootloader-does">
+  What a UEFI Bootloader does?
+  <a class="heading-link" href="#what-a-uefi-bootloader-does">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><strong>1</strong>.It tries to find &amp; open the kernel, How?<br>
+It gets information about it&rsquo;s own <code>Image</code> with <code>ImageHandle</code> the UEFI passes to
+<code>efi_main()</code> and <code>BootServices-&gt;HandleProtocol()</code> function.<br>
+In that information, there is pointer called <code>DeviceHandle</code> which is the handle
+to the device that includes the <code>Image</code>.
+It uses the <code>BootServices-&gt;HandleProtocol()</code> function again to get filesystem of
+that device and uses filesystem <code>OpenVolume()</code> function to open a volume.<br>
+After that, the <code>Volume-&gt;Open()</code> used to open the kernel file.</p>
+<p><strong>2</strong>.It tries to parse the kernel ELF64<br>
+After some validation of ELF header the bootloader need to know how much is the
+size of all program headers inside the ELF to allocate enough memory for them,
+so I decided to loop over all program header to find out how much memory they
+need but in that loop I check two important things too.<br>
+First I count program headers with <code>PT_LOAD</code> type to be sure that at least one
+program header with type <code>PT_LOAD</code> exists.<br>
+Second I check that the entry point be in one of <code>PT_LOAD</code> program headers.<br>
+These two checks are very important because if one of them fails, and the
+bootloader still jumps to entry point, there gonna be a huge confusion.</p>
+<p><strong>3</strong>.It allocates enough memory to load kernel<br>
+In the previous step the bootloader figured out value of the <code>kernel_size</code> and
+<code>kernel_start</code> so now it can use <code>BootServices-&gt;AllocatePages()</code> to allocate
+enough pages that can fit the kernel but, It also knows stack size from
+<code>STACK_SIZE</code> macro, so it&rsquo;ll allocate memory in address:</p>
+<blockquote>
+<p><code>kernel_start - STACK_SIZE</code></p>
+</blockquote>
+<p>So the first <code>STACK_SIZE</code> of the allocated memory is gonna be used as a <em>boot
+stack</em> for the kernel.</p>
+
       </div>
 
 
@@ -222,7 +265,7 @@
     ©
     
     2026
-     Arash Ghafari 
+     Arash Ghaffari 
     ·
     
     Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
