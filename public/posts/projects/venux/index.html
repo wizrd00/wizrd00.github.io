@@ -201,6 +201,8 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>The UEFI has already provided us a flat 64-bit memory and several tools that
+helps us writing a beautiful <em>bootloader</em></p>
 <hr>
 <h4 id="what-a-uefi-bootloader-does">
   What a UEFI Bootloader does?
@@ -231,12 +233,15 @@ bootloader still jumps to entry point, there gonna be a huge confusion.</p>
 In the previous step the bootloader figured out value of the <code>kernel_size</code> and
 <code>kernel_start</code> so now it can use <code>BootServices-&gt;AllocatePages()</code> to allocate
 enough pages that can fit the kernel but, It also knows stack size from
-<code>STACK_SIZE</code> macro, so it&rsquo;ll allocate memory in address:</p>
+<code>STACK_SIZE</code> macro, so it&rsquo;ll allocate memory at address:</p>
 <blockquote>
 <p><code>kernel_start - STACK_SIZE</code></p>
 </blockquote>
 <p>So the first <code>STACK_SIZE</code> of the allocated memory is gonna be used as a <em>boot
 stack</em> for the kernel.</p>
+<p><strong>4</strong>.It copies kernel to the allocated memory<br>
+After parsing the kernel&rsquo;s ELF64, copying data from file at <code>offset = p_offset</code>
+for each program header to the memory is the easy part.</p>
 
       </div>
 

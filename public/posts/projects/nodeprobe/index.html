@@ -262,7 +262,7 @@ To receive and send ICMP, I need to create <em>dgram socket</em> with address fa
 <p>Fourth step :</p>
 </li>
 <li>
-<p>checking UDP-based services such as <em>DNS</em>, *DHCP, <em>NTP</em> etc.</p>
+<p>checking UDP-based services such as <em>DNS</em>, <em>DHCP</em>, <em>NTP</em> etc.</p>
 </li>
 </ul>
 <h4 id="how-do-i-fake-test-my-modules">
@@ -272,14 +272,14 @@ To receive and send ICMP, I need to create <em>dgram socket</em> with address fa
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<p>As you know, testing modules is an unavoidable part of programming and according to size of the project, there is two option in C :</p>
+<p>Testing modules is an unavoidable part of programming and according to size of the project, there is two option in C :</p>
 <ul>
 <li><em>assert.h</em> standard header and <code>assert()</code> macro; In small Projects it works fine but it has an annoying problem, it doesn&rsquo;t give u a location to where the problem occurs</li>
 <li>third-party test libraries like <a href="https://github.com/ThrowTheSwitch/Unity"  class="external-link" target="_blank" rel="noopener"><em>Unity</em></a></li>
 </ul>
 <p>I&rsquo;m used to using <em>Unity</em> to test my modules. It&rsquo;s easy to link, It&rsquo;s minimal, It&rsquo;s fast(I think it probably tests units in saperate threads).
 But in Network Projects, testing units is not that easy. because there is <em>IO Band</em> functions such as <code>recv()</code>, <code>send()</code>, <code>recvfrom()</code>, etc. So units can&rsquo;t be dependent on these functions and to reach that goal you have to write fake version of them and link them to ur software(linkers use your functions instead of <em>libc</em> version of them by default so there is no need to manipulate linker).</p>
-<p>My method is to make a directory called <em>fake</em> inside of your test dir and use <em>sed</em> to replace your <strong><code>#include &lt;sys/socket.h&gt;</code></strong> to <strong><code>#include &quot;fake_socket.h&quot;</code></strong> or any header you want and save it in the <em>fake</em> dir. Also I write a <em>fake_socket.h</em> and <em>fake_socket.c</em> and use <strong><code>-Ifake</code></strong> make my compiler to use <em>fake_socket.h</em>.
+<p>My method is to make a directory called <em>fake</em> inside of test dir and use <em>sed</em> to replace <strong><code>#include &lt;sys/socket.h&gt;</code></strong> to <strong><code>#include &quot;fake_socket.h&quot;</code></strong> or any header and save it in the <em>fake</em> dir. Also I write a <em>fake_socket.h</em> and <em>fake_socket.c</em> and use <strong><code>-Ifake</code></strong> make my compiler to use <em>fake_socket.h</em>.
 To making all I have said sense, here is and example of this method :</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>test_arpman/
 </span></span><span style="display:flex;"><span>├── Makefile
@@ -328,12 +328,12 @@ To making all I have said sense, here is and example of this method :</p>
 </span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">$(</span>CC<span style="color:#ff7b72">)</span> -c <span style="color:#ff7b72">$(</span>CFLAGS<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>FAKE_DIR<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>UNITY_DIR<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>INCLUDE_DIR<span style="color:#ff7b72">)</span> -o <span style="color:#79c0ff">$@</span> $^
 </span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">$(ARPMAN_OBJ) </span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">FAKE_ARPMAN_SRC</span><span style="color:#ff7b72">)</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">FAKE_ARPMAN_HDR</span><span style="color:#ff7b72">)</span>
 </span></span><span style="display:flex;"><span>	@echo compiling $&lt;
-</span></span><span style="display:flex;"><span><span style="color:#f85149">**</span>	<span style="color:#ff7b72">$(</span><span style="color:#79c0ff">CC</span><span style="color:#ff7b72">)</span> <span style="color:#f85149">-c</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">CFLAGS</span><span style="color:#ff7b72">)</span> <span style="color:#f85149">-I</span><span style="color:#ff7b72">$(</span><span style="color:#79c0ff">FAKE_DIR</span><span style="color:#ff7b72">)</span> <span style="color:#f85149">-I</span><span style="color:#ff7b72">$(</span><span style="color:#79c0ff">INCLUDE_DIR</span><span style="color:#ff7b72">)</span> <span style="color:#f85149">-o</span> <span style="color:#ff7b72">$@</span> <span style="color:#ff7b72">$&lt;</span><span style="color:#f85149">**</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">$(</span>CC<span style="color:#ff7b72">)</span> -c <span style="color:#ff7b72">$(</span>CFLAGS<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>FAKE_DIR<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>INCLUDE_DIR<span style="color:#ff7b72">)</span> -o <span style="color:#79c0ff">$@</span> $&lt;
 </span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">$(FAKE_ARPMAN_SRC) </span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">REAL_ARPMAN_SRC</span><span style="color:#ff7b72">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#f85149">**</span>	<span style="color:#f85149">@cp</span> <span style="color:#ff7b72">$&lt;</span> <span style="color:#ff7b72">$@</span><span style="color:#f85149">**</span>
+</span></span><span style="display:flex;"><span>	@cp $&lt; <span style="color:#79c0ff">$@</span>
 </span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">$(FAKE_ARPMAN_HDR) </span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">REAL_ARPMAN_HDR</span><span style="color:#ff7b72">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#f85149">**</span>	<span style="color:#f85149">@cp</span> <span style="color:#ff7b72">$&lt;</span> <span style="color:#ff7b72">$@</span><span style="color:#f85149">**</span>
-</span></span><span style="display:flex;"><span><span style="color:#f85149">**</span>	<span style="color:#f85149">@sed</span> <span style="color:#f85149">-e</span> <span style="color:#a5d6ff">&#34;s/include &lt;poll\.h&gt;/include &lt;fake_poll.h&gt;/&#34;</span> <span style="color:#f85149">-e</span> <span style="color:#a5d6ff">&#34;s/include &lt;sys\/socket\.h&gt;/include &lt;fake_socket\.h&gt;/&#34;</span> <span style="color:#ff7b72">$&lt;</span> <span style="color:#f85149">&gt;</span> <span style="color:#ff7b72">$@</span><span style="color:#f85149">**</span>
+</span></span><span style="display:flex;"><span>	@cp $&lt; <span style="color:#79c0ff">$@</span>
+</span></span><span style="display:flex;"><span>	@sed -e <span style="color:#a5d6ff">&#34;s/include &lt;poll\.h&gt;/include &lt;fake_poll.h&gt;/&#34;</span> -e <span style="color:#a5d6ff">&#34;s/include &lt;sys\/socket\.h&gt;/include &lt;fake_socket\.h&gt;/&#34;</span> $&lt; &gt; <span style="color:#79c0ff">$@</span>
 </span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">$(FAKE_SOCKET_OBJ) </span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">FAKE_SOCKET_SRC</span><span style="color:#ff7b72">)</span>
 </span></span><span style="display:flex;"><span>	@echo compiling $&lt;
 </span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">$(</span>CC<span style="color:#ff7b72">)</span> -c <span style="color:#ff7b72">$(</span>CFLAGS<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>FAKE_DIR<span style="color:#ff7b72">)</span> -I<span style="color:#ff7b72">$(</span>INCLUDE_DIR<span style="color:#ff7b72">)</span> -o <span style="color:#79c0ff">$@</span> $&lt;

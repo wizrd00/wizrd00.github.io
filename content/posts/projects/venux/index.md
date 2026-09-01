@@ -10,7 +10,11 @@ categories = ["Projects"]
 +++
 
 ## UEFI Bootloader
+The UEFI has already provided us a flat 64-bit memory and several tools that
+helps us writing a beautiful *bootloader*
+
 ---
+
 #### What a UEFI Bootloader does?
 **1**.It tries to find & open the kernel, How?  
 It gets information about it's own `Image` with `ImageHandle` the UEFI passes to
@@ -36,8 +40,15 @@ bootloader still jumps to entry point, there gonna be a huge confusion.
 In the previous step the bootloader figured out value of the `kernel_size` and
 `kernel_start` so now it can use `BootServices->AllocatePages()` to allocate
 enough pages that can fit the kernel but, It also knows stack size from
-`STACK_SIZE` macro, so it'll allocate memory in address:
+`STACK_SIZE` macro, so it'll allocate memory at address:
 >`kernel_start - STACK_SIZE`
 
 So the first `STACK_SIZE` of the allocated memory is gonna be used as a *boot
 stack* for the kernel.
+
+**4**.It copies kernel to the allocated memory  
+After parsing the kernel's ELF64, copying data from file at `offset = p_offset`
+for each program header to the memory is the easy part.
+
+**5**.It creates new *Page Table* and maps allocated memory to the address that
+the kernel really needs (in my case it's 0xffffffff80000000 + 1M)
