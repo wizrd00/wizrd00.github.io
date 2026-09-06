@@ -1,0 +1,23 @@
+WARN  deprecated: project config key languageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use locale instead.
+Watching for changes in /home/wizrd/Projects/myblog/archetypes, /home/wizrd/Projects/myblog/assets, /home/wizrd/Projects/myblog/content/{about,posts}, /home/wizrd/Projects/myblog/data, /home/wizrd/Projects/myblog/i18n, /home/wizrd/Projects/myblog/layouts, /home/wizrd/Projects/myblog/static/images, /home/wizrd/Projects/myblog/themes/coder/archetypes, /home/wizrd/Projects/myblog/themes/coder/assets/{js,scss}, /home/wizrd/Projects/myblog/themes/coder/i18n, ... and 2 more
+Watching for config changes in /home/wizrd/Projects/myblog/hugo.toml, /home/wizrd/Projects/myblog/themes/coder/hugo.toml
+Start building sites … 
+hugo v0.165.0-76a5e1880ab46688155b02e99bab9be2a6134492+extended linux/amd64 BuildDate=2026-08-12T14:26:28Z VendorInfo=gohugoio
+
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 64 
+ Paginator pages  │  0 
+ Non-page files   │ 25 
+ Static files     │  8 
+ Processed images │  0 
+ Aliases          │ 26 
+ Cleaned          │  0 
+
+Built in 245 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop

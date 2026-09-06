@@ -161,7 +161,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              2-minute read
+              3-minute read
             </span>
           </div>
           <div class="authors">
@@ -204,13 +204,13 @@
 <p>The UEFI has already provided us a flat 64-bit memory and several tools that
 helps us writing a beautiful <em>bootloader</em></p>
 <hr>
-<h4 id="what-a-uefi-bootloader-does">
-  What a UEFI Bootloader does?
-  <a class="heading-link" href="#what-a-uefi-bootloader-does">
+<h3 id="what-does-a-uefi-bootloader-do">
+  What Does a UEFI Bootloader Do?
+  <a class="heading-link" href="#what-does-a-uefi-bootloader-do">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h4>
+</h3>
 <p><strong>1</strong>.It tries to find &amp; open the kernel, How?<br>
 It gets information about it&rsquo;s own <code>Image</code> with <code>ImageHandle</code> the UEFI passes to
 <code>efi_main()</code> and <code>BootServices-&gt;HandleProtocol()</code> function.<br>
@@ -242,6 +242,27 @@ stack</em> for the kernel.</p>
 <p><strong>4</strong>.It copies kernel to the allocated memory<br>
 After parsing the kernel&rsquo;s ELF64, copying data from file at <code>offset = p_offset</code>
 for each program header to the memory is the easy part.</p>
+<p><strong>5</strong>.It creates new <em>Page Table</em> and maps allocated memory to the address that
+the kernel really needs (in my case it&rsquo;s 0xffffffff80000000 + 1M)</p>
+<h3 id="but-how-do-i-write-a-uefi-bootloader">
+  But How Do I Write a UEFI Bootloader?
+  <a class="heading-link" href="#but-how-do-i-write-a-uefi-bootloader">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>I implemented the first four steps into the <code>efi_load_kernel()</code> function. And
+the fifth step into <code>efi_map_kernel()</code> function.</p>
+<p>Very Important part of writing a bootloader for me, is it&rsquo;s error handling. In
+my bootloader I have several types of error :</p>
+<ul>
+<li>FATAL_ERROR : In this case I will clean up every <code>Open()</code>, <code>OpenVolume()</code> or
+any other open that interacts with file systems, <strong>but</strong> I won&rsquo;t free any
+allocated memory because after a FATAL_ERROR the system will shutdown or halt
+so memory isn&rsquo;t gonna use after it.</li>
+<li>LOAD_ERROR : this error occurs when <code>efi_load_kernel()</code> or some functions that
+<code>efi_load_kernel()</code> uses itself fail.</li>
+</ul>
 
       </div>
 

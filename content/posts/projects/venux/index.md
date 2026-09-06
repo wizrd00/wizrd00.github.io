@@ -15,7 +15,7 @@ helps us writing a beautiful *bootloader*
 
 ---
 
-#### What a UEFI Bootloader does?
+### What Does a UEFI Bootloader Do?
 **1**.It tries to find & open the kernel, How?  
 It gets information about it's own `Image` with `ImageHandle` the UEFI passes to
 `efi_main()` and `BootServices->HandleProtocol()` function.  
@@ -52,3 +52,16 @@ for each program header to the memory is the easy part.
 
 **5**.It creates new *Page Table* and maps allocated memory to the address that
 the kernel really needs (in my case it's 0xffffffff80000000 + 1M)
+
+### But How Do I Write a UEFI Bootloader?
+I implemented the first four steps into the `efi_load_kernel()` function. And
+the fifth step into `efi_map_kernel()` function.
+
+Very Important part of writing a bootloader for me, is it's error handling. In
+my bootloader I have several types of error :
+- FATAL_ERROR : In this case I will clean up every `Open()`, `OpenVolume()` or
+  any other open that interacts with file systems, **but** I won't free any
+  allocated memory because after a FATAL_ERROR the system will shutdown or halt
+  so memory isn't gonna use after it.
+- LOAD_ERROR : this error occurs when `efi_load_kernel()` or some functions that
+   `efi_load_kernel()` uses itself fail.
