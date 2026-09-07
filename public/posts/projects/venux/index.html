@@ -243,7 +243,8 @@ stack</em> for the kernel.</p>
 After parsing the kernel&rsquo;s ELF64, copying data from file at <code>offset = p_offset</code>
 for each program header to the memory is the easy part.</p>
 <p><strong>5</strong>.It creates new <em>Page Table</em> and maps allocated memory to the address that
-the kernel really needs (in my case it&rsquo;s 0xffffffff80000000 + 1M)</p>
+the kernel really needs (in my case it&rsquo;s <strong>0xffffffff80000000 + 1M -
+<code>STACK_SIZE</code></strong>)</p>
 <h3 id="but-how-do-i-write-a-uefi-bootloader">
   But How Do I Write a UEFI Bootloader?
   <a class="heading-link" href="#but-how-do-i-write-a-uefi-bootloader">

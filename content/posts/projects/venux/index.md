@@ -51,7 +51,8 @@ After parsing the kernel's ELF64, copying data from file at `offset = p_offset`
 for each program header to the memory is the easy part.
 
 **5**.It creates new *Page Table* and maps allocated memory to the address that
-the kernel really needs (in my case it's 0xffffffff80000000 + 1M)
+the kernel really needs (in my case it's **0xffffffff80000000 + 1M -
+`STACK_SIZE`**)
 
 ### But How Do I Write a UEFI Bootloader?
 I implemented the first four steps into the `efi_load_kernel()` function. And
