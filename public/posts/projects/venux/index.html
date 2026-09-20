@@ -161,7 +161,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           <div class="authors">
@@ -251,7 +251,8 @@ memory to the address that the kernel really needs (in my case it&rsquo;s
 function and passing the first argument of <code>efi_main()</code> to it like this :</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>SysTab<span style="color:#ff7b72;font-weight:bold">-&gt;</span>BootServices<span style="color:#ff7b72;font-weight:bold">-&gt;</span><span style="color:#d2a8ff;font-weight:bold">HandleProtocol</span>(ImgHdl, <span style="color:#ff7b72;font-weight:bold">&amp;</span>LoadedImageGuid,
 </span></span><span style="display:flex;"><span>    (VOID <span style="color:#ff7b72;font-weight:bold">**</span>) <span style="color:#ff7b72;font-weight:bold">&amp;</span>LoadedImage);
-</span></span></code></pre></div><p>2.It set the <code>bios</code> member of <code>kargs</code> to <code>UEFI_BIOS</code>.</p>
+</span></span></code></pre></div><p>2.It allocate one page for PML4 table and initiates it then sets the <code>bios</code>
+member of <code>kargs</code> to <code>UEFI_BIOS</code>.</p>
 <p>3.It passes the <code>RuntimeServices</code> address to the kernel by calling the
 <code>efi_kargs_add_rt()</code> function.This function include this code :</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>args.uefi_rt <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">void</span> <span style="color:#ff7b72;font-weight:bold">*</span>)SysTab<span style="color:#ff7b72;font-weight:bold">-&gt;</span>RuntimeServices;
@@ -331,6 +332,68 @@ and <code>Volume</code>.</li>
 <p>4.It stores the <code>real_kernel_start</code> into <code>kargs.kern_start</code>, because the kernel
 only knows about it&rsquo;s virtual address and has no idea about it&rsquo;s real address.
 So it is bootloader&rsquo;s responsibility to passes this value to the kernel.</p>
+<p>5.Maps the kernel memory range which is <code>virt_kernel_start</code> to <code>virt_kernel_end</code>
+to it&rsquo;s real memory range (actually the code of this section is a little bit
+complicated so check the actual
+<a href="https://github.com/wizrd00/venux/blob/main/boot/bootloader/uefi/src/bootloader.c#L290"  class="external-link" target="_blank" rel="noopener">code</a>).</p>
+<p>6.Maps the bootloader image to itself because the bootloader still needed after
+setting the new PML4 (see the
+<a href="https://github.com/wizrd00/venux/blob/main/boot/bootloader/uefi/src/bootloader.c#L304"  class="external-link" target="_blank" rel="noopener">code</a>).</p>
+<ul>
+<li>Very Important Note : it doesn&rsquo;t maps the bootloader stack so after setting the
+new PML4 there not gonna be any function calls.</li>
+</ul>
+<p>7.It retrieves the <strong>Memory Map</strong> from the UEFI firmware and passes it to the
+kernel by storing it into <code>kargs.mem</code></p>
+<p>8.It calls <code>ExitBootServices()</code> which is very important step in all UEFI
+bootloaders (see what it does in
+<a href="https://uefi.org/specs/UEFI/2.10/07_Services_Boot_Services.html#efi-boot-services-exitbootservices"  class="external-link" target="_blank" rel="noopener">spec</a>).</p>
+<p>9.Now it is the time leave the UEFI land by calling assembly function
+<code>efi_leave()</code> which has few instructions :</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">BITS</span> <span style="color:#a5d6ff">64</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">extern</span> <span style="color:#79c0ff;font-weight:bold">pml4</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">extern</span> <span style="color:#79c0ff;font-weight:bold">kargs</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">extern</span> <span style="color:#79c0ff;font-weight:bold">kernel_entry</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">extern</span> <span style="color:#79c0ff;font-weight:bold">efi_halt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">section</span> <span style="color:#79c0ff;font-weight:bold">.text</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff;font-weight:bold">efi_leave:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#d2a8ff;font-weight:bold">cli</span> <span style="color:#8b949e;font-style:italic">; turning interrupts off (the kernel enables them later)
+</span></span></span><span style="display:flex;"><span>	<span style="color:#d2a8ff;font-weight:bold">mov</span> <span style="color:#79c0ff;font-weight:bold">rax</span>, [<span style="color:#79c0ff;font-weight:bold">pml4</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#d2a8ff;font-weight:bold">mov</span> <span style="color:#79c0ff;font-weight:bold">cr3</span>, <span style="color:#79c0ff;font-weight:bold">rax</span> <span style="color:#8b949e;font-style:italic">; setting the new page tables
+</span></span></span><span style="display:flex;"><span>	<span style="color:#d2a8ff;font-weight:bold">mov</span> <span style="color:#79c0ff;font-weight:bold">rsp</span>, <span style="color:#79c0ff;font-weight:bold">kargs</span> <span style="color:#8b949e;font-style:italic">; passing kernel arguments struct address
+</span></span></span><span style="display:flex;"><span>	<span style="color:#d2a8ff;font-weight:bold">jmp</span> [<span style="color:#79c0ff;font-weight:bold">kernel_entry</span>] <span style="color:#8b949e;font-style:italic">; direct jump to kernel entry point
+</span></span></span><span style="display:flex;"><span>	<span style="color:#d2a8ff;font-weight:bold">jmp</span> <span style="color:#79c0ff;font-weight:bold">efi_halt</span> <span style="color:#8b949e;font-style:italic">; never gonna reach this instruction
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">global</span> <span style="color:#79c0ff;font-weight:bold">efi_leave</span>
+</span></span></code></pre></div><hr>
+<h2 id="the-kernel-venux">
+  The Kernel (venux)
+  <a class="heading-link" href="#the-kernel-venux">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The kernel starts at address <code>higher-half + 1M</code> and it has 6 sections :</p>
+<ul>
+<li><strong>.text</strong></li>
+<li><strong>.rodata</strong></li>
+<li><strong>.data</strong></li>
+<li><strong>.bss</strong></li>
+<li><strong>.arena</strong>
+<ul>
+<li>I use this section as temporary memory pool to allocate first page tables</li>
+</ul>
+</li>
+<li><strong>.stack</strong>
+<ul>
+<li>It&rsquo;s a bootstrap stack for the kernel</li>
+</ul>
+</li>
+</ul>
+<hr>
 
       </div>
 

@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2026-08-01
 title = "Venux Kernel"
 description = "My Minimal Unix-Like Kernel"
@@ -58,7 +58,8 @@ SysTab->BootServices->HandleProtocol(ImgHdl, &LoadedImageGuid,
     (VOID **) &LoadedImage);
 ```
 
-2.It set the `bios` member of `kargs` to `UEFI_BIOS`.
+2.It allocate one page for PML4 table and initiates it then sets the `bios`
+member of `kargs` to `UEFI_BIOS`.
 
 3.It passes the `RuntimeServices` address to the kernel by calling the
 `efi_kargs_add_rt()` function.This function include this code :
@@ -141,3 +142,57 @@ efi_memset((void *)addr, 0, gapsz);
 4.It stores the `real_kernel_start` into `kargs.kern_start`, because the kernel
 only knows about it's virtual address and has no idea about it's real address.
 So it is bootloader's responsibility to passes this value to the kernel.
+
+5.Maps the kernel memory range which is `virt_kernel_start` to `virt_kernel_end`
+to it's real memory range (actually the code of this section is a little bit
+complicated so check the actual
+[code](https://github.com/wizrd00/venux/blob/main/boot/bootloader/uefi/src/bootloader.c#L290)).
+
+6.Maps the bootloader image to itself because the bootloader still needed after
+setting the new PML4 (see the
+[code](https://github.com/wizrd00/venux/blob/main/boot/bootloader/uefi/src/bootloader.c#L304)).  
+- Very Important Note : it doesn't maps the bootloader stack so after setting the
+new PML4 there not gonna be any function calls.
+
+7.It retrieves the **Memory Map** from the UEFI firmware and passes it to the
+kernel by storing it into `kargs.mem`
+
+8.It calls `ExitBootServices()` which is very important step in all UEFI
+bootloaders (see what it does in
+[spec](https://uefi.org/specs/UEFI/2.10/07_Services_Boot_Services.html#efi-boot-services-exitbootservices)).
+
+9.Now it is the time leave the UEFI land by calling assembly function
+`efi_leave()` which has few instructions :
+``` asm
+BITS 64
+
+extern pml4
+extern kargs
+extern kernel_entry
+extern efi_halt
+
+section .text
+
+efi_leave:
+	cli ; turning interrupts off (the kernel enables them later)
+	mov rax, [pml4]
+	mov cr3, rax ; setting the new page tables
+	mov rsp, kargs ; passing kernel arguments struct address
+	jmp [kernel_entry] ; direct jump to kernel entry point
+	jmp efi_halt ; never gonna reach this instruction
+
+global efi_leave
+```
+---
+## The Kernel (venux)
+The kernel starts at address `higher-half + 1M` and it has 6 sections :
+- **.text**
+- **.rodata**
+- **.data**
+- **.bss**
+- **.arena**
+  - I use this section as temporary memory pool to allocate first page tables
+- **.stack**
+  - It's a bootstrap stack for the kernel
+
+---
