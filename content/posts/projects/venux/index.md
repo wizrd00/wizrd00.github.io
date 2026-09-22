@@ -86,7 +86,7 @@ EFI_FILE_PROTOCOL *Volume = NULL;
 FileSystem->OpenVolume(FileSystem, &Volume);
 
 EFI_FILE_PROTOCOL *KernelFile = NULL;
-Volume->Open(Volume, &KernelFile, "venux.elf", EFI_FILE_MODE_READ, (UINT64)0);
+Volume->Open(Volume, &KernelFile, L"venux.elf", EFI_FILE_MODE_READ, (UINT64)0);
 ```
 - 2.Then it read exactly `sizeof(struct boot_elf64_ehdr)` from the file.
 - 3.Validating the Entry Header of the ELF file is the next move
