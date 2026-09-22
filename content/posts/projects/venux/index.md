@@ -58,8 +58,7 @@ SysTab->BootServices->HandleProtocol(ImgHdl, &LoadedImageGuid,
     (VOID **) &LoadedImage);
 ```
 
-2.It allocate one page for PML4 table and initiates it then sets the `bios`
-member of `kargs` to `UEFI_BIOS`.
+2.It allocate one page for PML4 table and initiates it.
 
 3.It passes the `RuntimeServices` address to the kernel by calling the
 `efi_kargs_add_rt()` function.This function include this code :
